@@ -36,16 +36,16 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         #id: artifact
         run: |
-          ls -la ../
-          ls -la ./
-          echo "artifact_path=../ts-fix-videos.tar.gz" >> $GITHUB_ENV
+          cp ../ts-fix-videos.tar.gz ./ts-fix-videos.tar.gz
+          echo "artifact_path=./ts-fix-videos.tar.gz" >> $GITHUB_ENV
           echo "artifact_name=ts-fix-videos-linux.tar.gz" >> $GITHUB_ENV
 
       - name: Set artifact on windows
         if: matrix.os == 'windows-latest'
         #id: artifact
         run: |
-          echo "artifact_path=..\ts-fix-videos.zip" >> $GITHUB_ENV
+          copy ..\ts-fix-videos.zip .\ts-fix-videos.zip
+          echo "artifact_path=ts-fix-videos.zip" >> $GITHUB_ENV
           echo "artifact_name=ts-fix-videos-windows.zip" >> $GITHUB_ENV
 
       # 6️⃣ Create GitHub Release
