@@ -1,5 +1,5 @@
 import pathToFfmpeg from 'ffmpeg-static';
-import {spawn, spawnSync} from 'child_process';
+import { spawn } from 'child_process';
 
 let totalDuration = null; // Sekunden
 let lastPrinted = 0;
