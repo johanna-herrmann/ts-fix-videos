@@ -15,13 +15,16 @@ This tool converts Videos to match this condition.
 It also converts into mp4.
 
 ## How to use
-* Download zip/tar from GitHub Releases page
+* Download zip/tar.gz from
+  [GitHub Releases page](https://github.com/johanna-herrmann/ts-fix-videos/releases/latest)
 * unzip/untar it
 * Go to `ts-fix-videos/` and put your videos there
-* Linux/Mac: Make `ts-fix-videos.sh` executable
-* execute `ts-fix-videos.sh` (with double click, for example)
-  * videos will now be converted and saved under:
-    `ts-fix-videos/fixed/`
+* Linux/Mac: Make `ts-fix-videos/ts-fix-videos` executable
+* Execute the executable file, via double click for example
+  * Linux/Mac: `ts-fix-videos/ts-fix-videos`
+  * Windows: `ts-fix-videos/ts-fix-videos.cmd`
+* All Videos in `ts-fix-videos/` will be converted and stored to
+  `ts-fix-videos/fixed/`
 
 ## License
 [MIT License](#LICENSE.md)
