@@ -30,19 +30,29 @@ jobs:
       - name: package
         run: npx package
 
+      - name: copy artifact to root for linux
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          cp ../ts-fix-videos.tar.gz ./ts-fix-videos.tar.gz
+
+      - name: copy artifact to root for windows
+        if: matrix.os == 'windows-latest'
+        run: |
+          copy ..\ts-fix-videos.zip .\ts-fix-videos.zip
+
       - name: Upload artifact for linux
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
           name: artifact-linux
-          path: ../ts-fix-videos.tar.gz
+          path: ts-fix-videos.tar.gz
 
       - name: Upload artifact for windows
         if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
           name: artifact-windows
-          path: ../ts-fix-videos.zip
+          path: ts-fix-videos.zip
 
     # 2️⃣ Create release and upload all artifacts
   release:
