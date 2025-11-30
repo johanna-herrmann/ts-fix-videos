@@ -15,6 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -54,12 +55,12 @@ jobs:
           name: artifact-windows
           path: ts-fix-videos.zip
 
-    # 2️⃣ Create release and upload all artifacts
+  # 2️⃣ Create release and upload all artifacts
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Download Linux artifact
@@ -83,7 +84,7 @@ jobs:
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
 
       - name: Upload Linux artifact
         uses: actions/upload-release-asset@v1
