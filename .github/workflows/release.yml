@@ -36,6 +36,8 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         #id: artifact
         run: |
+          ls -la ../
+          ls -la ./
           echo "artifact_path=../ts-fix-videos.tar.gz" >> $GITHUB_ENV
           echo "artifact_name=ts-fix-videos-linux.tar.gz" >> $GITHUB_ENV
 
