@@ -1,7 +1,7 @@
 {
-  "name": "fix-videos",
+  "name": "ts-fix-videos",
   "version": "1.0.0",
-  "description": "Fixes Videos to be mp4 with H264 and AAC.",
+  "description": "Fixes Videos to be mp4 with H264 and AAC, to be suitable for TS and HLS.",
   "main": "build/index.mjs",
   "type": "module",
   "scripts": {},
