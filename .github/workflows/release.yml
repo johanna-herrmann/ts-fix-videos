@@ -5,9 +5,6 @@ on:
     tags:
       - 'v*'
 
-permissions:
-  contents: write
-
 jobs:
   # 1️⃣ Build artifacts for Linux and Windows
   build:
@@ -84,7 +81,7 @@ jobs:
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Linux artifact
         uses: actions/upload-release-asset@v1
@@ -93,6 +90,8 @@ jobs:
           asset_path: ./linux-artifact/ts-fix-videos.tar.gz
           asset_name: ts-fix-videos-linux.tar.gz
           asset_content_type: application/gzip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Windows artifact
         uses: actions/upload-release-asset@v1
@@ -101,3 +100,5 @@ jobs:
           asset_path: ./windows-artifact/ts-fix-videos.zip
           asset_name: ts-fix-videos-windows.zip
           asset_content_type: application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
